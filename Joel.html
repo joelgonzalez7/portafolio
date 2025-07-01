@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel González | Desarrollador Front End</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <article class="stars"></article>
+
+  <!-- Menú vertical -->
+  <article class="menu">
+    <button onclick="goToSlide(0)" class="active">Inicio</button>
+    <button onclick="goToSlide(1)">Proyectos</button>
+    <button onclick="goToSlide(2)">Lenguajes</button>
+    <button onclick="goToSlide(3)">Contacto</button>
+  </article>
+
+  <!-- Contenedor de slider -->
+  <article class="slider-container">
+    <article class="slider-wrapper" id="sliderWrapper">
+      <section class="slider-section">
+        <h1>Joel González</h1>
+        <p>Creo experiencias digitales que combinan diseño, interacción y sonido.</p>
+        <p>Mi enfoque está en que cada detalle comunique algo y funcione bien</p>
+        <article class="social-icons">
+          <a href="mailto:joelious7@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/joelgonzalez7" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/joeliouss" target="_blank"><i class="fab fa-instagram"></i></a>
+        </article>
+        <article class="btn-container">
+          <button class="btn" onclick="goToSlide(1)">Ver proyectos</button>
+        </article>
+
+        <!-- Círculo y reproductor aquí -->
+        <article class="circle-container">
+          <canvas id="stringCircleCanvas"></canvas>
+        </article>
+
+        <article class="audio-player-box">
+          <article class="song-title" id="songTitle">🎵 Crush On You</article>
+          <article class="controls">
+            <button id="prevBtn"><i class="fas fa-backward"></i></button>
+            <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+            <button id="nextBtn"><i class="fas fa-forward"></i></button>
+          </article>
+          <article class="progress-container">
+            <i class="fas fa-music"></i>
+            <input type="range" id="progressBar" value="0" min="0" max="100" step="1">
+          </article>
+          <article class="volume-container">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volumeControl" value="100" min="0" max="100">
+          </article>
+        </article>
+      </section>
+
+      <section class="slider-section">
+        <h1>Proyectos</h1>
+        <p>Aquí van tus proyectos destacados.</p>
+
+        <article class="project-card">
+          <article class="project-content">
+            <h2>Calculadora Del Amor</h2>
+            <p>Una app simple que simula un test de compatibilidad emocional. A través de preguntas personales, te dice si estás viviendo una historia de amor… o cayendo en la friendzone!!.</p>
+            <a href="#" target="_blank" class="btn">Ver proyecto</a>
+          </article>
+        </article>
+      </section>
+
+      <section class="slider-section">
+        <h1>Lenguajes</h1>
+        <p>Lenguajes que he utilizado en mis proyectos.</p>
+
+        <article class="languages-grid">
+          <article class="lang-card"><i class="fab fa-html5"></i><span>HTML</span></article>
+          <article class="lang-card"><i class="fab fa-css3-alt"></i><span>CSS</span></article>
+          <article class="lang-card"><i class="fab fa-js"></i><span>JavaScript</span></article>
+          <article class="lang-card"><i class="fab fa-python"></i><span>Python</span></article>
+          <article class="lang-card"><i class="fab fa-java"></i><span>Java</span></article>
+        </article>
+      </section>
+
+      <section class="slider-section">
+        <h1>Contacto</h1>
+        <p>Si tenés alguna consulta, ¡escribime directamente!</p>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado');">
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <textarea name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+    </article>
+  </article>
+
+  <!-- Audio y JS -->
+  <audio id="sampleAudio" src="./CrushOnYou.mp3"></audio>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
